@@ -1,0 +1,131 @@
+.menu{
+  
+    display:inline-block;
+
+    color: blanchedalmond;
+    font-size: 30px;
+   
+    cursor: pointer;
+    background-color: transparent;
+    border: none;
+    box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, 0.5);
+
+}
+.container{
+    display: block;
+   
+    background-color: blue;
+  
+}
+
+.btnhome{
+    display:inline-block;
+    
+}
+.home{
+    background-color: transparent;
+    
+    border: none;
+    cursor: pointer;
+    box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, 0.5)
+   
+}
+.home>img{
+    max-width: 50px;
+}
+.assort{
+    display: grid;
+    grid-template-columns:  250px  auto ;
+
+}
+.cat{
+    display:inline;
+    background-color: brown;
+    padding: 3%;
+}
+
+.bcat{
+    display:flex;
+
+    color: blanchedalmond;
+    font-size: 20px;
+   
+    cursor: pointer;
+    background-color: transparent;
+    border: none;
+    box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, 0.5);
+}
+.subcat{display:flex;
+
+    color: blanchedalmond;
+    font-size: 15px;
+    margin-top: 0px;
+    cursor: pointer;
+    background-color: transparent;
+    border: none;
+    box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, 0.5);}
+.subca{
+    /* padding-left: 10px; */
+    margin: 8px;
+    margin-left: 10px;
+}
+.listtovar{
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    grid-template-rows: repeat(1,1fr);
+    
+}
+.cart{
+    /* display: flex; */
+    background-color: rgb(204, 185, 223);
+    margin: 10px;
+    
+    border: 2px solid black;
+    padding: 10px;
+    position: relative;
+}
+.cart>img{
+    display: flex;
+    max-width: 100%;
+    
+    max-height: 65%;
+    /* position: relative; */
+    margin-left: auto;
+    margin-right: auto;
+
+}
+.base{
+    background-image: url(base.jpeg);
+    background-size: no-repeat;
+    /* background-position: center; */
+    /* background-size: cover; */
+   
+}
+.bag{
+    display: flex;
+    background-color: transparent;
+    margin-left: auto;
+    margin-right: auto;
+    border: none;
+    cursor: pointer;
+    box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, 0.5);
+    background-color: rgb(7, 176, 1);
+}
+.pagdiv{
+    display: flex;
+    justify-content: center;
+}
+.pagbutton{
+    padding-left: 5px;
+    padding-right: 5px;
+    border-left: 1px;
+    border-color: black;
+    background-color: rgb(253, 253, 253);
+}
+
+.filters{
+    display: inline-flex;
+    background-color: aqua;
+    margin-top: 3px;
+    margin-left: 3px;
+}

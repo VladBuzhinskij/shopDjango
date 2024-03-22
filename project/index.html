@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <link rel="stylesheet" href="static/styles/style.css">
+</head>
+
+<body class="base">
+    
+    <div class="container">{% block menu %}
+        <button class="home" >
+
+            <img src="static/images/home (1).png" >
+        </button>
+        <button class="menu">Категории</button>
+        <button class="menu">Достака и оплата</button>
+        <button class="menu">Личный кабинет</button>
+        <input type="text" placeholder="Поиск">
+        {% endblock menu %}
+    </div>
+    
+</body>
+
+</html>

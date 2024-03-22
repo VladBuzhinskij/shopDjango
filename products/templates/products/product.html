@@ -1,0 +1,82 @@
+{% extends 'products/assort.html' %}
+{% load static %}
+
+
+{% block content %}
+    
+
+
+
+
+
+<div class="assort">
+    <div class="cat">
+        
+        {% for category in categories %}
+        
+            <form action="{% url 'products:assort' category.slug %}">
+                <button class="bcat">{{category.name}}</button>
+            </form>
+            {% for subcategory in subcategories %}
+                
+                {% if category.id == subcategory.category.id %}
+                    <dl class="subca">
+                        <dt>
+                            <form action="{% url 'products:assort' category.slug subcategory.slug %}">
+                                <button class="subcat">
+                                    {{subcategory.name}} 
+                                </button>
+                            </form>
+                        </dt>
+                    </dl>
+                {% endif %}                    
+            {% endfor %}
+        {% endfor %} 
+    </div>
+    
+    {% comment %} <div class="cat">
+        {% for category in categories %}
+            <button class="bcat">{{category.name}}</button>
+            
+            {% for subcategory in subcategories %}
+                
+                {% if category.id == subcategory.category.id %}
+                    <dl class="subca">
+                        <dt>
+                            <button class="subcat">
+                            {{subcategory.name}} 
+                            </button>
+                        </dt>
+                    </dl>
+                {% endif %}                    
+            {% endfor %}
+        {% endfor %}
+    </div> {% endcomment %}
+    
+    
+        
+        
+    <div class="listtovar">
+   
+        
+        <div class="cart">
+            
+            {% if product.image %}
+                <img src="{{product.image.url}}" alt="{{product.name}}">
+            {%else%}
+                <img src="{% static 'images/NFimg.jpg' %}">
+            {% endif %}
+                
+            
+            
+            <h4>{{product.discription}}</h4>
+            <h2>Цена: {{product.price}}</h2>
+            
+            <button class="bag"  >
+                <h2>Добавить в козину</h2>
+                
+            </button>
+        </div>   
+ 
+    </div>
+    {% endblock content %}

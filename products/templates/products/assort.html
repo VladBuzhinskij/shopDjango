@@ -1,0 +1,110 @@
+{% extends 'main/base.html' %}
+{% load static %}
+{% load products_tags %}
+
+    
+{% block content %}
+
+
+
+
+<div class="assort">
+
+    <div class="cat">        
+        {% for category in categories %}        
+            <form action="{% url 'products:assort' category.slug %}">
+                <button class="bcat">{{category.name}}</button>
+            </form>
+            {% for subcategory in subcategories %}
+                
+                {% if category.id == subcategory.category.id %}
+                    <dl class="subca">
+                        <dt>
+                            <form action="{% url 'products:assort' category.slug subcategory.slug %}">
+                                <button class="subcat">
+                                    {{subcategory.name}} 
+                                </button>
+                            </form>
+                        </dt>
+                    </dl>
+                {% endif %}                    
+            {% endfor %}
+        {% endfor %} 
+    </div>
+    
+    
+    <div>
+        <div >
+            <div class="filters">
+                <a  href="?{% change_params order_by='price' %}">Дешевые</a>
+            </div>
+            <div class="filters">
+                <a  href="?{% change_params order_by='-price' %}">Дорогие</a>
+            </div>
+        </div>
+
+        <div class="listtovar">
+            {% if products != 0 %}    
+                {% for product in products %}                    
+                    <div class="cart">                        
+                        {% if product.image %}
+                            <img src="{{product.image.url}}" alt="{{product.name}}">
+                        {%else%}
+                            <img src="{% static 'images/NFimg.jpg' %}">
+                        {% endif %}                            
+                        <form action="{% url 'products:product' product.slug %}">
+                            <button class="home"  >
+                                <h3 >{{product.name}}</h3>    
+                            </button>               
+                        </form>            
+                        <h4>{{product.discription}}</h4>
+                        <h2>Цена: {{product.price}}</h2>
+                        <button class="bag"  >
+                            <h2>Добавить в козину</h2>   
+                        </button>
+                    </div>   
+                {% endfor %}
+            {% else %}
+                <p>Ничего не найдено</p>
+            {% endif %}   
+        </div>
+
+    
+
+
+
+        <div class=pagdiv>                
+            {% if products != 0 %}
+                {% if products.has_previous %}
+                <div class="pagbutton">
+                    <a  href="?{% change_params page=products.previous_page_number %}"><</a>
+
+                </div>
+            
+                {% endif %}                                          
+                {% for page in products.paginator.page_range %}
+                    
+                    {% if page >= products.number|add:-2 and page <= products.number|add:2 %}
+                        
+                        
+                        
+                        <div class="pagbutton">
+                            <a  href="?{% change_params page=page %}">{{page}}</a>
+                        </div>
+                       
+                    {% endif %} 
+                {% endfor %}
+                {% if products.has_next %}
+                <div class="pagbutton">
+                    <a  href="?{% change_params page=products.next_page_number %}">></a>
+                </div>                    
+                {% endif %}
+            {% endif %}
+        </div>
+    </div>          
+            
+         
+     
+</div>
+{% endblock content %}
+    

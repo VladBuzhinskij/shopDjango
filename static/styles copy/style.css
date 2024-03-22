@@ -1,0 +1,88 @@
+.menu{
+  
+    display:inline-block;
+
+    color: blanchedalmond;
+    font-size: 30px;
+   
+    cursor: pointer;
+    background-color: transparent;
+    border: none;
+    box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, 0.5);
+
+}
+.container{
+   
+    background-color: blue;
+  
+}
+.home{
+    background-color: transparent;
+    
+    border: none;
+    cursor: pointer;
+    box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, 0.5)
+   
+}
+.home>img{
+    max-width: 50px;
+}
+.assort{
+    display: grid;
+    grid-template-columns:  250px  auto ;
+
+}
+.cat{
+    display:inline;
+    background-color: brown;
+    padding: 3%;
+}
+
+.bcat{
+    display:flex;
+
+    color: blanchedalmond;
+    font-size: 20px;
+   
+    cursor: pointer;
+    background-color: transparent;
+    border: none;
+    box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, 0.5);
+}
+.subcat{display:flex;
+
+    color: blanchedalmond;
+    font-size: 15px;
+    margin-top: 0px;
+    cursor: pointer;
+    background-color: transparent;
+    border: none;
+    box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, 0.5);}
+.subca{
+    /* padding-left: 10px; */
+    margin: 8px;
+    margin-left: 10px;
+}
+.listtovar{
+    display: grid;
+    background-color: rgb(150, 117, 181);
+    grid-template-columns: repeat(3,1fr);
+    
+}
+.cart{
+    background-color: rgb(204, 185, 223);
+    margin: 10px;
+    
+    border: 2px solid black;
+    padding: 10px;
+}
+.cart>img{
+    max-width: 100%;
+}
+.base{
+    background-image: url(base.jpeg);
+    background-size: no-repeat;
+    /* background-position: center; */
+    /* background-size: cover; */
+   
+}

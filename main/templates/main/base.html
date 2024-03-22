@@ -1,0 +1,58 @@
+{% load static %}
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <link rel="stylesheet" href= "{% static "styles/style.css" %}">
+</head>
+
+<body class="base">
+    
+    <div class="container">
+        
+
+        <form class="btnhome" action="{% url 'main:index' %}">
+
+            <button class="home"  >
+                <img src= "{% static "images/home(1).png" %}" >
+                {% comment %} <img src="static/images/home (1).png" > {% endcomment %}
+                
+            </button>
+        </form>
+           
+       
+        <form class="btnhome" action="{% url 'products:assort' 'all'%}">
+
+            <button class="menu">Категории</button>
+        </form>
+        <button class="menu">Достака и оплата</button>
+        <button class="menu">Личный кабинет</button>
+        <form class="btnhome" action="{% url 'main:about' %}">
+
+            <button class="menu">О нас</button>
+        </form>
+        <form action="{% url 'products:search' %}" method="get">
+            <input class=".search"  type="text" name="q" placeholder="Поиск">
+            <input type="submit" value="Поиск">
+        </form>
+        
+        
+    </div>
+    
+        
+        {% block content %}
+            
+        {% endblock content %}
+            
+        
+        
+
+   
+</body>
+
+</html>
