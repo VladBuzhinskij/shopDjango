@@ -5,15 +5,22 @@ class Categories (models.Model):
     name=models.CharField( max_length=150, unique=True,verbose_name="Названее")
     slug=models.SlugField(max_length=200,blank=True,unique=True,verbose_name="URL")
 
+    def __str__(self):
+        return self.name
+
     class Meta:
         db_table = "category"
         verbose_name="Категорию"
         verbose_name_plural="Категории"
+    
 
 class SubCategories (models.Model):
     name=models.CharField( max_length=150, unique=False,verbose_name="Названее")
     slug=models.SlugField(max_length=200,blank=True,unique=True,verbose_name="URL")
     category=models.ForeignKey(to=Categories, verbose_name=("Категория"), on_delete=models.CASCADE)
+    
+    def __str__(self):
+        return self.name
     
     class Meta:
         db_table = "subcategory"
@@ -30,6 +37,8 @@ class Products(models.Model):
     quantity=models.PositiveIntegerField(default=0,verbose_name="Количество")
     subcategory=models.ForeignKey(to=SubCategories, verbose_name=("Категория"), on_delete=models.CASCADE)
 
+    def __str__(self):
+        return self.name
 
     class Meta:
         db_table = "Product"

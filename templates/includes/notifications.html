@@ -1,0 +1,14 @@
+{% load static %}
+{% if form.non_field_errors %}
+    <div class="logform">
+                <p>{{form.non_field_errors}}</p>
+    </div>
+    
+{% endif %}
+{% if messages %}
+    {% for message in messages %}
+        <div class="okno">
+            {{message}}
+        </div>
+    {% endfor %}  
+{% endif %}

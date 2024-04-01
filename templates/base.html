@@ -31,11 +31,34 @@
             <button class="menu">Категории</button>
         </form>
         <button class="menu">Достака и оплата</button>
-        <button class="menu">Личный кабинет</button>
         <form class="btnhome" action="{% url 'main:about' %}">
 
             <button class="menu">О нас</button>
         </form>
+        
+        
+        {% if not user.is_authenticated %}
+            <form class="btnhome" action="{% url 'users:login' %}">
+                <button class="menu">Войти</button>
+            </form>
+        {% else %}
+            <form class="btnhome" action="{% url 'users:logout' %}">
+                <button class="menu">Выйти</button>
+            </form>
+            <form class="btnhome" action="{% url 'users:profile' %}">
+                <button class="menu">Личный кабинет</button>
+            </form>            
+            {% if user.is_admin or user.is_staff %}
+                <form class="btnhome" action="{% url 'admin:index' %}">
+                    <button class="menu">Админ панель</button>
+                </form>  
+            {% endif %}
+        {% endif %}
+            
+
+
+
+        
         <form action="{% url 'products:search' %}" method="get">
             <input class=".search"  type="text" name="q" placeholder="Поиск">
             <input type="submit" value="Поиск">
@@ -49,7 +72,7 @@
             
         {% endblock content %}
             
-        
+        {% include 'includes/notifications.html' %}    
         
 
    

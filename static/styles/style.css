@@ -129,3 +129,43 @@
     margin-top: 3px;
     margin-left: 3px;
 }
+
+.logform{
+    display: inline-block;
+    background-color: aliceblue;
+    margin-top: 5px;
+    position: relative;
+    margin-left: 35vw;
+    min-width: 200px;
+    max-width: 300px;
+    width: 30%;
+    padding-left: 5px;
+    padding-bottom: 5px;
+    border: 1px solid black;
+    border-radius: 10px;
+    box-shadow: 10px 10px 5px rgba(0,0,0,0.6);
+}
+
+.regbut{
+    display: inline;
+}
+.inpreg{
+    display: flex;
+}
+.okno {
+    background-color: aliceblue;
+    width: 300px;
+    height: 50px;
+    text-align: center;
+    padding: 15px;
+    border: 3px solid #000008;
+    border-radius: 10px;
+    color: #000000;
+    /* display: none; */
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    margin: auto;
+  }
