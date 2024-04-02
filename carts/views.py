@@ -1,0 +1,9 @@
+from django.shortcuts import render
+
+def cart_add(requset,product_id):
+    ...
+
+def cart_change(requset,product_id):
+    ...
+def cart_remove(requset,product_id):
+    ...
